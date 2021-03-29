@@ -11,7 +11,7 @@
 }
 
 .boolzapp-container{
-  width: 80%;
+  width: 90%;
   height: 100%;
   margin: auto;
   display: flex;
@@ -21,7 +21,7 @@
 
 .boolzapp{
   height: 90%;
-  width: 90%;
+  width: 95%;
   background-color: pink;
 }
 /* /Main container */
@@ -29,7 +29,7 @@
 /* Nav details */
 .main-nav{
   height: 100%;
-  width: 30%;
+  width: 35%;
   background-color: lightgreen;
 }
 
@@ -59,6 +59,25 @@
   color: #B1B1B1;
 }
 
+.notify-nav{
+  background-color: #8EDAFC;
+  display: flex;
+  align-items: center;
+  padding: 7px 0px;
+}
+
+.notify-nav i{
+  color: #8EDAFC;
+  font-size: 18px;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 12px;
+  margin: 7px;
+}
+
+.notify-txt a{
+  color: grey;
+}
 
 
 
