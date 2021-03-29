@@ -45,9 +45,9 @@
           <input id="chat-research" type="text" placeholder="Cerca o inizia una nuova chat">
         </section>
         <section id="chat-list">
-          <div v-for="(item, index) in contacts" class="chat-user">{{item.name}}
+          <div v-for="(item, index) in contacts" class="chat-user">
             <img class="profile-pic" :src="contacts[index].avatar" alt="chat-user">
-            <p></p>
+            <p>{{item.name}}</p>
           </div>
         </section>
       </aside>
