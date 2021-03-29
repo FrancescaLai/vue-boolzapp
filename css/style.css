@@ -1,0 +1,31 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.background-container{
+  height: 100vh;
+  background: linear-gradient(to top, #dbdbd2 86%, #009688 86%);
+}
+
+.boolzapp-container{
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boolzapp{
+  height: 90%;
+  width: 90%;
+  background-color: pink;
+}
+
+.main-nav{
+  height: 100%;
+  width: 30%;
+  background-color: lightgreen;
+}
