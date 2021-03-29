@@ -112,7 +112,7 @@ input:focus{
   background-color: #fff;
 }
 
-.chat-list{
+#chat-list{
   height: calc(100% - 170px);
   overflow: auto;
 }
@@ -128,7 +128,7 @@ input:focus{
   margin-left: 10px;
 }
 
-.chat-list .chat-user:first-child{
+#chat-list .chat-user:first-child{
   background-color: #E9EBEB;
 }
 

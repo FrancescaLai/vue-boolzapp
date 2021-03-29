@@ -20,6 +20,7 @@
 <div class="background-container">
   <div class="boolzapp-container">
     <div class="boolzapp">
+      <!-- Lateral Nav -->
       <aside class="main-nav">
         <section class="header background-color">
           <div class="left-nav">
@@ -43,26 +44,18 @@
           <label for="chat-research"><a href="#"><i class="fas fa-search"></i></a></label>
           <input id="chat-research" type="text" placeholder="Cerca o inizia una nuova chat">
         </section>
-        <section class="chat-list">
-          <div class="chat-user">
+        <section id="chat-list">
+          <div v-for="(item, index) in contacts" class="chat-user">
             <img class="profile-pic" src="img/avatar_1.jpg" alt="chat-user">
-            <p>Alessio</p>
-          </div>
-          <div class="chat-user">
-            <img class="profile-pic" src="img/avatar_2.jpg" alt="chat-user">
-            <p>Carlo</p>
-          </div>
-          <div class="chat-user">
-            <img class="profile-pic" src="img/avatar_3.jpg" alt="chat-user">
-            <p>Mario</p>
-          </div>
-          <div class="chat-user">
-            <img class="profile-pic" src="img/avatar_4.jpg" alt="chat-user">
-            <p>Giovanni</p>
+            <p v-for="item in contacts">{{item.name}}</p>
           </div>
         </section>
       </aside>
+      <!-- /Lateral Nav -->
+
+      <!-- Main chat section -->
       <section class="main-chat">
+        <!-- Header -->
         <div class="header background-color">
           <div class="left-nav">
             <img class="profile-pic" src="img/avatar_1.jpg" alt="profile-pic">
@@ -77,6 +70,9 @@
             <a href="#"><i class="nav-actions fas fa-ellipsis-v"></i></a>
           </div>
         </div>
+        <!-- /Header -->
+
+        <!-- Chat area -->
         <div class="texting-area">
           <div class="my-message">
             <div class="my-content">
@@ -103,12 +99,18 @@
             </div>
           </div>
         </div>
+        <!-- /Chat area-->
+
+        <!-- Bottom chat -->
         <div class="bottom-chat">
           <i class="bottom-actions far fa-smile"></i>
           <input type="text" placeholder="Scrivi un messaggio">
           <i class="bottom-actions fas fa-microphone"></i>
         </div>
+        <!-- /Bottom chat -->
+
       </section>
+      <!-- /Main chat section -->
     </div>
   </div>
 </div>
