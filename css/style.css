@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* Main container */
 .background-container{
   height: 100vh;
   background: linear-gradient(to top, #dbdbd2 86%, #009688 86%);
@@ -23,9 +24,42 @@
   width: 90%;
   background-color: pink;
 }
+/* /Main container */
 
+/* Nav details */
 .main-nav{
   height: 100%;
   width: 30%;
   background-color: lightgreen;
 }
+
+.header-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #EAEAEA;
+  border-right: 1px solid lightgrey;
+}
+.left-nav{
+  display: flex;
+  align-items: center;
+}
+.profile-pic{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 7px;
+}
+
+.right-nav i{
+  padding: 5px;
+}
+
+.nav-actions{
+  color: #B1B1B1;
+}
+
+
+
+
+/* /Nav details */
