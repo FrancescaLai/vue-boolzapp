@@ -148,9 +148,10 @@ input:focus{
   color: grey;
 }
 
-.chat-texting{
+.texting-area{
   height: calc(100% - 110px);
   background-image: url(../img/mine.jpg);
+  overflow: auto;
 }
 
 .bottom-chat{
@@ -170,3 +171,54 @@ input:focus{
   border-radius: 3px;
 }
 /* /Main Chat */
+
+
+.my-message{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  margin-right: 50px;
+}
+
+.texting-area .my-message:first-child{
+  margin-top: 70px;
+}
+
+.my-content{
+  background-color: #D5F9BA;
+  padding: 10px 15px 5px 20px;
+  border-radius: 8px;
+  max-width: 400px;
+}
+
+.my-content .text{
+  padding-right: 120px;
+}
+
+.date-info {
+  text-align: right;
+  padding-right: 8px;
+  font-size: 12px;
+  color: lightgrey;
+}
+
+.friends-message{
+  display: flex;
+  margin-left: 50px;
+  margin-bottom:10px;
+}
+
+.friends-content{
+  background-color: #ffff;
+  padding: 10px 15px 5px 20px;
+  border-radius: 8px;
+  max-width: 400px;
+}
+
+.friends-content p:first-child{
+  margin-right: 50px;
+}
+
+.friends-content p:nth-child(2){
+  margin-left: 87px;
+}
