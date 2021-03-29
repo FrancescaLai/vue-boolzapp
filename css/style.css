@@ -85,6 +85,9 @@
 
 .chat-section{
   padding: 7px;
+  background-color: #FAFAFA;
+  display: flex;
+  align-items: center;
 }
 
 .chat-section input{
@@ -95,6 +98,14 @@
 
 .chat-section input:focus{
   outline: none;
+}
+
+.chat-section i{
+  color: #B1B1B1;
+  border: 1px solid lightgrey;
+  padding: 5px 6px 4px 6px;
+  border-right: none;
+  background-color: #fff;
 }
 
 
