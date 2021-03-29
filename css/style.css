@@ -25,7 +25,7 @@
 }
 
 .boolzapp{
-  height: 90%;
+  height: 95%;
   width: 95%;
   background-color: pink;
 }
@@ -35,7 +35,7 @@
 .main-nav{
   height: 100%;
   width: 35%;
-  background-color: lightgreen;
+  background-color: #ffff;
 }
 
 .header-nav{
@@ -103,11 +103,29 @@
 .chat-section i{
   color: #B1B1B1;
   border: 1px solid lightgrey;
-  padding: 5px 6px 4px 6px;
+  padding: 5px 12px 4px 12px;
   border-right: none;
   background-color: #fff;
 }
 
+.chat-list{
+  height: calc(100% - 170px);
+  overflow: auto;
+}
 
+.chat-user{
+  display: flex;
+  border-bottom: 1px solid lightgrey;
+  padding-left: 10px;
+}
+
+.chat-user p{
+  margin-top: 7px;
+  margin-left: 10px;
+}
+
+.chat-list .chat-user:first-child{
+  background-color: #E9EBEB;
+}
 
 /* /Nav details */
