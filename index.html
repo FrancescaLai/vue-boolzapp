@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<div class="background-container">
+<div id="boolzapp-js" class="background-container">
   <div class="boolzapp-container">
     <div class="boolzapp">
       <!-- Lateral Nav -->
@@ -44,7 +44,7 @@
           <label for="chat-research"><a href="#"><i class="fas fa-search"></i></a></label>
           <input id="chat-research" type="text" placeholder="Cerca o inizia una nuova chat">
         </section>
-        <section id="chat-list">
+        <section>
           <div v-for="(item, index) in contacts" class="chat-user">
             <img class="profile-pic" :src="contacts[index].avatar" alt="chat-user">
             <p>{{item.name}}</p>
@@ -60,7 +60,7 @@
           <div class="left-nav">
             <img class="profile-pic" src="img/avatar_1.jpg" alt="profile-pic">
             <div class="access-info">
-              <p>Alessio</p>
+              <p>Michele</p>
               <p id="timing">Ultimo accesso oggi alle</p>
             </div>
           </div>
@@ -74,26 +74,14 @@
 
         <!-- Chat area -->
         <div class="texting-area">
-          <div class="my-message">
-            <div class="my-content">
-              <p class="text">Ciao mi chiamo Francesca</p>
-              <p class="date-info">29/03/2021  15.50</p>
-            </div>
-          </div>
-          <div class="my-message">
-            <div class="my-content">
-              <p class="text">Halooooooooooo</p>
+          <div v-for="(item, index) in contacts" class="my-message">
+            <div class="sent">
+              <p class="text">{{item.message}}</p>
               <p class="date-info">29/03/2021  15.50</p>
             </div>
           </div>
           <div class="friends-message">
-            <div class="friends-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-              <p class="date-info">29/03/2021  15.50</p>
-            </div>
-          </div>
-          <div class="friends-message">
-            <div class="friends-content">
+            <div class="received">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
               <p class="date-info">29/03/2021  15.50</p>
             </div>

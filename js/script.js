@@ -1,6 +1,6 @@
 var app = new Vue(
   {
-    el: "#chat-list",
+    el: "#boolzapp-js",
     data: {
       contacts: [
         {
@@ -87,7 +87,7 @@ var app = new Vue(
           ],
         },
       ],
-      
+    
     },
   }
 );

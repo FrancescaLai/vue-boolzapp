@@ -184,14 +184,14 @@ input:focus{
   margin-top: 70px;
 }
 
-.my-content{
+.sent{
   background-color: #D5F9BA;
   padding: 10px 15px 5px 20px;
   border-radius: 8px;
   max-width: 400px;
 }
 
-.my-content .text{
+.sent .text{
   padding-right: 120px;
 }
 
@@ -208,7 +208,7 @@ input:focus{
   margin-bottom:10px;
 }
 
-.friends-content{
+.received{
   background-color: #ffff;
   padding: 10px 15px 5px 20px;
   border-radius: 8px;
@@ -216,11 +216,11 @@ input:focus{
   margin-right: 35px;
 }
 
-.friends-content p:first-child{
+.received p:first-child{
   margin-right: 50px;
 }
 
-.friends-content p:nth-child(2){
+.received p:nth-child(2){
   margin-left: 87px;
 }
 
