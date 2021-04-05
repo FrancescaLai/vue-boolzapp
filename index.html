@@ -74,7 +74,7 @@
 
         <!-- Chat area -->
         <div class="texting-area">
-          <div v-for="(item, index) in contacts" class="my-message">
+          <div v-for="item in contacts[indiceAttivo].messages" class="my-message">
             <div class="sent">
               <p class="text">{{item.message}}</p>
               <p class="date-info">29/03/2021  15.50</p>

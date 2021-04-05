@@ -87,7 +87,7 @@ var app = new Vue(
           ],
         },
       ],
-    
+    indiceAttivo: 0,
     },
   }
 );
