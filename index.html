@@ -25,7 +25,7 @@
         <section class="header background-color">
           <div class="left-nav">
             <img class="profile-pic" src="img/avatar_io.jpg" alt="profile-pic">
-            <p>Nome utente</p>
+            <p>Francesca Lai</p>
           </div>
           <div class="right-nav">
             <a href="#"><i class="nav-actions fas fa-circle-notch"></i></a>
@@ -45,7 +45,7 @@
           <input id="chat-research" type="text" placeholder="Cerca o inizia una nuova chat">
         </section>
         <section>
-          <div v-for="(item, index) in contacts" class="chat-user">
+          <div v-for="(item, index) in contacts" @click="setContactActive(index)" class="chat-user">
             <img class="profile-pic" :src="contacts[index].avatar" alt="chat-user">
             <p>{{item.name}}</p>
           </div>
@@ -74,17 +74,14 @@
 
         <!-- Chat area -->
         <div class="texting-area">
-          <div v-for="item in contacts[indiceAttivo].messages" class="my-message">
+          <div v-for="item in contacts[indiceAttivo].messages" class="my-message" >
             <div class="sent">
               <p class="text">{{item.message}}</p>
-              <p class="date-info">29/03/2021  15.50</p>
+              <p class="date-info">{{item.date}}</p>
             </div>
           </div>
           <div class="friends-message">
-            <div class="received">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-              <p class="date-info">29/03/2021  15.50</p>
-            </div>
+
           </div>
         </div>
         <!-- /Chat area-->
@@ -92,7 +89,7 @@
         <!-- Bottom chat -->
         <div class="bottom-chat">
           <i class="bottom-actions far fa-smile"></i>
-          <input type="text" placeholder="Scrivi un messaggio">
+          <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addNewMessage">
           <i class="bottom-actions fas fa-microphone"></i>
         </div>
         <!-- /Bottom chat -->

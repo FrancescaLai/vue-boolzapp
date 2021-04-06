@@ -87,7 +87,36 @@ var app = new Vue(
           ],
         },
       ],
-    indiceAttivo: 0,
+      indiceAttivo: 0,
+      newMessage: ""
     },
+    methods: {
+      setContactActive: function(index){
+        this.indiceAttivo = index;
+      },
+      addNewMessage: function(){
+        let messaggio = {
+          date: '10/01/2020',
+          message: this.newMessage,
+          status: "sent"
+        };
+
+        let contactActiveObg = this.contact[this.indiceAttivo];
+
+        this.contacts[this.indiceAttivo].messages.push(messaggio);
+
+        this.newMessage = "";
+
+        setTimeout(function(){
+          let messaggio = {
+            date: '10/01/2020',
+            message: "ok",
+            status: "received"
+          };
+
+          contactActiveObg.messages.push(messaggio);
+        }, 1000);
+      }
+    }
   }
 );
