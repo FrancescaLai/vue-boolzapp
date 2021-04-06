@@ -96,7 +96,7 @@ var app = new Vue(
         this.indiceAttivo = index;
       },
       addNewMessage: function(){
-        var text = {
+        let text = {
           date: '10/01/2020 15:50:00',
           message: this.newMessage,
           status: "sent"
@@ -119,7 +119,7 @@ var app = new Vue(
         }, 1000);
       },
       searchContact: function(item) {
-        if ( (item.name).includes(this.searchedContact) ) {
+        if ( (item.name).toLowerCase().includes(this.searchedContact) ) {
         return true;
         }
       }
