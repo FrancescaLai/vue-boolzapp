@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -42,10 +43,10 @@
         </section>
         <section class="chat-section">
           <label for="chat-research"><a href="#"><i class="fas fa-search"></i></a></label>
-          <input id="chat-research" type="text" placeholder="Cerca o inizia una nuova chat">
+          <input id="chat-research" type="text" value="Cerca o inizia una nuova chat" v-model="searchedContact">
         </section>
         <section>
-          <div v-for="(item, index) in contacts" @click="contactActive(index)" class="chat-user">
+          <div v-for="(item, index) in contacts" @click="contactActive(index)" class="chat-user" v-show="searchContact(item)">
             <img class="profile-pic" :src="contacts[index].avatar" alt="chat-user">
             <p>{{item.name}}</p>
           </div>

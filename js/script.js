@@ -88,7 +88,8 @@ var app = new Vue(
         },
       ],
       indiceAttivo: 0,
-      newMessage: ""
+      newMessage: "",
+      searchedContact: ""
     },
     methods: {
       contactActive: function(index){
@@ -116,6 +117,11 @@ var app = new Vue(
 
         contactObj.messages.push(text);
         }, 1000);
+      },
+      searchContact: function(item) {
+        if ( (item.name).includes(this.searchedContact) ) {
+        return true;
+        }
       }
     }
   }
