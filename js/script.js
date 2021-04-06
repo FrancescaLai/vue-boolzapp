@@ -91,30 +91,30 @@ var app = new Vue(
       newMessage: ""
     },
     methods: {
-      setContactActive: function(index){
+      contactActive: function(index){
         this.indiceAttivo = index;
       },
       addNewMessage: function(){
-        let messaggio = {
-          date: '10/01/2020',
+        var text = {
+          date: '10/01/2020 15:50:00',
           message: this.newMessage,
           status: "sent"
         };
 
-        let contactActiveObg = this.contact[this.indiceAttivo];
+      var contactObj = this.contact[this.indiceAttivo];
 
-        this.contacts[this.indiceAttivo].messages.push(messaggio);
+      this.contacts[this.indiceAttivo].messages.push(text);
 
-        this.newMessage = "";
+      this.newMessage = "";
 
-        setTimeout(function(){
-          let messaggio = {
-            date: '10/01/2020',
-            message: "ok",
-            status: "received"
-          };
+      setTimeout(function(){
+        let text = {
+          date: '10/01/2020 15:50:00',
+          message: "ok",
+          status: "received"
+        };
 
-          contactActiveObg.messages.push(messaggio);
+        contactObj.messages.push(text);
         }, 1000);
       }
     }
