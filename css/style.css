@@ -214,6 +214,7 @@ input:focus{
   border-radius: 8px;
   max-width: 400px;
   margin-right: 35px;
+  margin-left: 50px;
 }
 
 .received p:first-child{
