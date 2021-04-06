@@ -102,7 +102,7 @@ var app = new Vue(
           status: "sent"
         };
 
-      var contactObj = this.contact[this.indiceAttivo];
+      var contactObj = this.contacts[this.indiceAttivo];
 
       this.contacts[this.indiceAttivo].messages.push(text);
 
