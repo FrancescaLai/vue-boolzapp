@@ -89,7 +89,11 @@ var app = new Vue(
       ],
       indiceAttivo: 0,
       newMessage: "",
-      searchedContact: ""
+      searchedContact: "",
+      openPanel: false,
+      emoticons: [
+        '😀','😆','😁','😅','🤣','😂','🙂','😉','😉','😊','😇','🥰','😍','🤩','😘','😗','🍋','🍌','🍍','🥭','🍎','🍏','🍄','🧅','🥯','🍔','🥓','🍟','🍺','🍷','🍸','🥃','🍫',
+      ],
     },
     methods: {
       contactActive: function(index){
