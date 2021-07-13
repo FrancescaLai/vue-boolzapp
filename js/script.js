@@ -6,83 +6,98 @@ var app = new Vue(
         {
           name: 'Michele',
           avatar: 'img/avatar_1.jpg',
+          accessTime: "10:24",
           visible: true,
           messages: [
             {
-              date: '10/01/2020 15:30:55',
+              time: '15:30:55',
               message: 'Hai portato a spasso il cane?',
-              status: 'sent'
+              status: 'sent',
+              active: 'false'
             },
             {
-              date: '10/01/2020 15:50:00',
+              time: '15:50:00',
               message: 'Ricordati di dargli da mangiare',
-              status: 'sent'
+              status: 'sent',
+              active: 'false'
             },
             {
-              date: '10/01/2020 16:15:22',
-              message: 'Tutto fatto!',
-              status: 'received'
+              time: '16:15:22',
+              message: 'Tutto a posto, non ti preoccupare!',
+              status: 'received',
+              active: 'false'
             }
           ],
         },
         {
           name: 'Fabio',
           avatar: 'img/avatar_2.jpg',
+          accessTime: "18:03",
           visible: true,
           messages: [
             {
-              date: '20/03/2020 16:30:00',
+              time: '16:30:00',
               message: 'Ciao come stai?',
-              status: 'sent'
+              status: 'sent',
+              active: 'false'
             },
             {
-              date: '20/03/2020 16:30:55',
+              time: '16:30:55',
               message: 'Bene grazie! Stasera ci vediamo?',
-              status: 'received'
+              status: 'received',
+              active: 'false'
             },
             {
-              date: '20/03/2020 16:35:00',
+              time: '16:35:00',
               message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-              status: 'received'
+              status: 'received',
+              active: 'false'
             }
           ],
         },
         {
           name: 'Samuele',
           avatar: 'img/avatar_3.jpg',
+          accessTime: "20:37",
           visible: true,
           messages: [
             {
-              date: '28/03/2020 10:10:40',
+              time: '10:10:40',
               message: 'La Marianna va in campagna',
-              status: 'received'
+              status: 'received',
+              active: 'false'
             },
             {
-              date: '28/03/2020 10:20:10',
+              time: '10:20:10',
               message: 'Sicuro di non aver sbagliato chat?',
-              status: 'sent'
+              status: 'sent',
+              active: 'false'
             },
             {
-              date: '28/03/2020 16:15:22',
+              time: '16:15:22',
               message: 'Ah scusa!',
-              status: 'received'
+              status: 'received',
+              active: 'false'
             }
           ],
         },
         {
-          name: 'Luisa',
+          name: 'Giacomo',
           avatar: 'img/avatar_4.jpg',
+          accessTime: "04:00",
           visible: true,
           messages: [
             {
-              date: '10/01/2020 15:30:55',
+              time: '15:30:55',
               message: 'Lo sai che ha aperto una nuova pizzeria?',
-              status: 'sent'
+              status: 'sent',
+              active: 'false'
             },
             {
-              date: '10/01/2020 15:50:00',
+              time: '15:50:00',
               message: 'Si, ma preferirei andare al cinema',
-              status: 'received'
+              status: 'received',
+              active: 'false'
             }
           ],
         },
@@ -90,7 +105,8 @@ var app = new Vue(
       indiceAttivo: 0,
       newMessage: "",
       searchedContact: "",
-      openPanel: false,
+      messageIndex: 0,
+      openEmoji: false,
       emoticons: [
         '😀','😆','😁','😅','🤣','😂','🙂','😉','😉','😊','😇','🥰','😍','🤩','😘','😗','🍋','🍌','🍍','🥭','🍎','🍏','🍄','🧅','🥯','🍔','🥓','🍟','🍺','🍷','🍸','🥃','🍫',
       ],
@@ -99,6 +115,7 @@ var app = new Vue(
       contactActive: function(index){
         this.indiceAttivo = index;
       },
+
       addNewMessage: function(){
         let text = {
           date: '10/01/2020 15:50:00',
@@ -122,11 +139,35 @@ var app = new Vue(
         contactObj.messages.push(text);
         }, 1000);
       },
+
       searchContact: function(item) {
         if ( (item.name).toLowerCase().includes(this.searchedContact) ) {
         return true;
         }
-      }
+      },
+
+      callToAction: function(i){
+        this.messageIndex = i;
+        if (this.contacts[this.indiceAttivo].messages[this.indiceAttivo].active == false){
+          this.contacts[this.indiceAttivo].messages.forEach(message => {
+            return message.active = false;
+          });
+          return this.contacts[this.indiceAttivo].messages[this.messageIndex].active = true;
+        } else {
+          this.contacts[this.indiceAttivo].messages.forEach(message => {
+            return message.active = false;
+          });
+        }
+
+      },
+
+      callToEmoji: function(){
+        return this.openEmoji = !this.openEmoji;
+      },
+
+      addEmoji: function(i){
+        return this.newMessage += this.emoticons[i];
+      },
     }
   }
 );

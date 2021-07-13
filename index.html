@@ -61,8 +61,8 @@
           <div class="left-nav">
             <img class="profile-pic" :src="contacts[indiceAttivo].avatar" alt="profile-pic">
             <div class="access-info">
-              <p>Michele</p>
-              <p id="timing">Ultimo accesso oggi alle</p>
+              <p>{{contacts[indiceAttivo].name}}</p>
+              <p id="timing">Ultimo accesso oggi alle: {{contacts[indiceAttivo].accessTime}}</p>
             </div>
           </div>
           <div class="right-nav">
@@ -76,17 +76,35 @@
         <!-- Chat area -->
         <div class="texting-area">
           <div v-for="item in contacts[indiceAttivo].messages" class="my-message" >
-            <div :class="item.status">
+            <div class="bubble" :class="item.status">
               <p class="text">{{item.message}}</p>
-              <p class="date-info">{{item.date}}</p>
+              <div class="flex">
+                <p class="date-info">{{item.time}}</p>
+                <div class="visual">
+                  <i class="fas fa-angle-down" @click="callToAction(index)"></i>
+                </div>
+                <div  >
+                  <div class="">
+                    <!-- <ul>
+                      <li>info messaggio</li>
+                    </ul> -->
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <!-- /Chat area-->
 
+        <div class="emoji-panel" :class= " openEmoji == true? 'open' : 'close' ">
+          <ul class="emoji-list">
+            <li class='emoticon' v-for="(emoji, index) in emoticons" @click="addEmoji(index)">{{emoticons[index]}}</li>
+          </ul>
+        </div>
+
         <!-- Bottom chat -->
         <div class="bottom-chat">
-          <i class="bottom-actions far fa-smile"></i>
+          <i class="bottom-actions far fa-smile" @click='callToEmoji'></i>
           <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addNewMessage">
           <i class="bottom-actions fas fa-microphone"></i>
         </div>
