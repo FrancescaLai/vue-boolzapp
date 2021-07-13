@@ -131,7 +131,7 @@ var app = new Vue(
 
       setTimeout(function(){
         let text = {
-          date: '10/01/2020 15:50',
+          time: dayjs().format('HH:mm'),
           message: "ok",
           status: "received"
         };
