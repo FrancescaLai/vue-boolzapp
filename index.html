@@ -83,7 +83,16 @@
               <div class="flex">
                 <p class="date-info">{{item.time}}</p>
                 <div class="visual">
-                  <i class="fas fa-angle-down" @click="callToAction(index)"></i>
+                  <i class="fas fa-angle-down" @click="dropdown(i)"></i>
+                </div>
+                <div v-if="message.active == true">
+                  <div class="delete">
+                    <ul>
+                      <li>Rispondi</li>
+                      <li>Inoltra messaggio</li>
+                      <li>Elimina messaggio</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>

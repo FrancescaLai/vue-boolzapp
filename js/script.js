@@ -105,6 +105,7 @@ var app = new Vue(
       indiceAttivo: 0,
       newMessage: "",
       searchedContact: "",
+      message: "",
       messageIndex: 0,
       openEmoji: false,
       emoticons: [
@@ -146,9 +147,11 @@ var app = new Vue(
         }
       },
 
-      callToAction: function(i){
+      dropdown: function(i){
+
         this.messageIndex = i;
-        if (this.contacts[this.indiceAttivo].messages[this.indiceAttivo].active == false){
+
+        if (this.contacts[this.indiceAttivo].messages[this.messageIndex].active == false){
           this.contacts[this.indiceAttivo].messages.forEach(message => {
             return message.active = false;
           });
@@ -158,7 +161,6 @@ var app = new Vue(
             return message.active = false;
           });
         }
-
       },
 
       callToEmoji: function(){
